@@ -12,10 +12,10 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 # Agregando clave de repositorio docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-# Agreando repositorio docker
+# Agregando repositorio docker
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
-# Revisando version candidata
+# Revisando versión candidata
 apt-cache policy docker-ce
 
 # Instalando docker-ce
@@ -24,7 +24,7 @@ sudo apt install docker-ce
 # Agregando usuario al grupo docker
 sudo usermod -aG docker ${USER}
 
-# Cargando en la sesion la pertencia al grupo docker
+# Cargando en la sesión la pertenencia al grupo docker
 su - ${USER}
 
 ```
@@ -39,7 +39,7 @@ Fuente: [https://kind.sigs.k8s.io](https://kind.sigs.k8s.io)
 mkdir workspace 
 cd workspace    
 
-# Descarga de la herramiente kind
+# Descarga de la herramienta kind
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64 
 
 # Dando permiso de ejecución a kind
@@ -81,7 +81,7 @@ __Cerrar el editor de texto presionando__
 - tecla control + o, seguido de enter para guardar
 - tecla control + x para salir
 
-__Creacion del cluster__
+__Creación del cluster__
 
 ```bash
 # Creación del cluster
@@ -97,6 +97,10 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 # Instalando kubectl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-# Obteniendo informacion del los nodos del cluster local
+# Obteniendo información del los nodos del cluster local
 kubectl get nodes
+
+# Obteniendo un listado del los namespaces del cluster local
+kubectl get namespaces
+
 ```
